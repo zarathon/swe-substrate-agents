@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Node modules (caso alguém adicione scripts)
+node_modules/
+
+# Python (caso alguém adicione scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Documentação gerada localmente (swe-substrate deve ser commitado)
+# mas pode haver arquivos temporários de testes
+.test-output/
