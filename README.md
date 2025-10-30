@@ -1,62 +1,86 @@
 # SWE Substrate Agents
 
-Sistema de agentes especializados para gerar documentação **modularizada** otimizada para projetos de software.
+**[🇧🇷 Português](README.pt-BR.md)**
 
-## 🎯 Objetivo
+A system of specialized agents that generate **modular documentation** optimized for software projects.
 
-Este projeto fornece um conjunto de agentes inteligentes que coletam informações sobre projetos de software através de perguntas abertas e análise automática de código, gerando documentação modular em `.claude/swe-substrate/` otimizada para uso com Claude Code.
+## 🎯 Objective
 
-## 🤖 Agentes Disponíveis
+This project provides a set of intelligent agents that collect information about software projects through open-ended questions and automatic code analysis, generating modular documentation in `.claude/swe-substrate/` optimized for use with Claude Code.
 
-Cada agente é especializado em um aspecto específico do projeto:
+## 🚨 The Critical Problem
 
-1. **`/swe-substrate-project-context`** - Contexto do Projeto
-   - Visão geral, domínio, negócio, métricas, stakeholders
+**Claude Code is only powerful when it deeply understands your project.**
 
-2. **`/swe-substrate-tooling-config`** - Ferramental e Configuração
-   - Docker, IaC, variáveis de ambiente, scripts de setup
+Without structured context about your engineering substrate, Claude Code:
+- ❌ Generates generic code that doesn't compile
+- ❌ Suggests libraries you don't use
+- ❌ Ignores team conventions
+- ❌ Creates tests that don't run
+- ❌ Proposes incompatible architectures
 
-3. **`/swe-substrate-languages`** - Linguagens e Idiomática
-   - Convenções de código, concorrência, memória, guidelines
+**With structured substrate:**
+- ✅ Claude generates idiomatic code that works
+- ✅ Uses the correct project libraries
+- ✅ Follows all established conventions
+- ✅ Creates tests that run immediately
+- ✅ Proposes solutions aligned with architecture
 
-4. **`/swe-substrate-api-design`** - Design de API
-   - REST, GraphQL, gRPC, versionamento, contratos
+## 🧬 What is Engineering Substrate?
 
-5. **`/swe-substrate-testing-strategy`** - Estratégia de Testes
-   - Testes unitários, integração, E2E, coverage
+The **fundamental layers** that define how your software is built, tested, deployed, and maintained. It's your project's DNA.
 
-6. **`/swe-substrate-agents`** - Agentes e Processos Background
+## 🤖 Available Agents
+
+Each agent specializes in a specific aspect of the project:
+
+1. **`/swe-substrate-project-context`** - Project Context
+   - Business vision, domain, metrics, stakeholders
+
+2. **`/swe-substrate-tooling-config`** - Tooling & Configuration
+   - Docker, IaC, environment variables, setup scripts
+
+3. **`/swe-substrate-languages`** - Languages & Idioms
+   - Code conventions, concurrency, memory, guidelines
+
+4. **`/swe-substrate-api-design`** - API Design
+   - REST, GraphQL, gRPC, versioning, contracts
+
+5. **`/swe-substrate-testing-strategy`** - Testing Strategy
+   - Unit, integration, E2E tests, coverage
+
+6. **`/swe-substrate-agents`** - Agents & Background Processes
    - Daemons, workers, background jobs, LLM agents
 
-7. **`/swe-substrate-package-mgmt`** - Gerenciamento de Pacotes
-   - npm, pip, cargo, dependências, versionamento
+7. **`/swe-substrate-package-mgmt`** - Package Management
+   - npm, pip, cargo, dependencies, versioning
 
-8. **`/swe-substrate-observability`** - Observabilidade
-   - Logs, métricas, traces, monitoring, alertas
+8. **`/swe-substrate-observability`** - Observability
+   - Logs, metrics, traces, monitoring, alerts
 
-9. **`/swe-substrate-data`** - Dados e Persistência
-   - Databases, schema, migrations, cache, storage
+9. **`/swe-substrate-data`** - Data & Persistence
+   - Databases, schemas, migrations, cache, storage
 
-10. **`/swe-substrate-security`** - Segurança
-    - Autenticação, autorização, secrets, certificados
+10. **`/swe-substrate-security`** - Security
+    - Authentication, authorization, secrets, certificates
 
-11. **`/swe-substrate-documentation`** - Documentação
-    - Comentários, diagramas, ADRs, knowledge base
+11. **`/swe-substrate-documentation`** - Documentation
+    - Comments, diagrams, ADRs, knowledge base
 
-## 📁 Estrutura Modular
+## 📁 Modular Structure
 
-A documentação gerada é **modularizada** em arquivos separados:
+Generated documentation is **modularized** into separate files:
 
 ```
-projeto/
-├── CLAUDE.md                      # Índice principal (leve)
+project/
+├── CLAUDE.md                      # Main index (lightweight)
 └── .claude/
-    ├── commands/                  # Agentes (fazem perguntas)
+    ├── commands/                  # Agents (ask questions)
     │   ├── swe-substrate-init.md
     │   ├── swe-substrate-tooling-config.md
     │   └── ...
     │
-    └── swe-substrate/             # Documentação modular (gerada)
+    └── swe-substrate/             # Modular documentation (generated)
         ├── project-context.md
         ├── tooling-config.md
         ├── languages.md
@@ -70,107 +94,130 @@ projeto/
         └── documentation.md
 ```
 
-**Vantagens da modularização:**
-- ✅ Sem arquivo gigante monolítico
-- ✅ Fácil manutenção e navegação
-- ✅ Menos conflitos em PRs
-- ✅ Documentação escalável
-- ✅ Cada módulo é independente
+**Advantages of modularization:**
+- ✅ No giant monolithic file
+- ✅ Easy maintenance and navigation
+- ✅ Fewer PR conflicts
+- ✅ Scalable documentation
+- ✅ Each module is independent
 
-## 🚀 Como Usar
+## 🚀 How to Use
 
-### Início Rápido
+### Quick Start
 
-1. **Copie a pasta `.claude/`** para o seu projeto
-2. Execute o orquestrador para ver todos os agentes disponíveis:
+1. **Copy the `.claude/` folder** to your project
+2. Run the orchestrator to see all available agents:
    ```bash
    /swe-substrate-init
    ```
-3. Execute apenas os agentes relevantes para seu projeto:
+3. Run only the relevant agents for your project:
    ```bash
    /swe-substrate-languages
    /swe-substrate-testing-strategy
    /swe-substrate-data
    ```
 
-### Workflow Recomendado
+### Recommended Workflow
 
-#### Para Novos Projetos
+#### For New Projects
 
-Comece com os fundamentos:
-- `/swe-substrate-project-context` - Contexto de negócio e visão geral
-- `/swe-substrate-tooling-config` - Setup inicial
-- `/swe-substrate-languages` - Convenções de código
-- `/swe-substrate-testing-strategy` - Qualidade desde o início
+Start with the fundamentals:
+- `/swe-substrate-project-context` - Business context and overview
+- `/swe-substrate-tooling-config` - Initial setup
+- `/swe-substrate-languages` - Code conventions
+- `/swe-substrate-testing-strategy` - Quality from the start
 
-#### Para Projetos Existentes
+#### For Existing Projects
 
-Execute conforme a necessidade:
-- Adicione `/swe-substrate-security` ao documentar práticas de segurança
-- Use `/swe-substrate-observability` ao configurar monitoramento
-- Execute `/swe-substrate-data` ao adicionar persistência
-- Use `/swe-substrate-api-design` ao criar APIs
+Run as needed:
+- Add `/swe-substrate-security` when documenting security practices
+- Use `/swe-substrate-observability` when configuring monitoring
+- Run `/swe-substrate-data` when adding persistence
+- Use `/swe-substrate-api-design` when creating APIs
 
-### Como Cada Agente Funciona
+### How Each Agent Works
 
-Cada agente segue 4 fases:
+Each agent follows 4 phases:
 
-1. **Análise Automática** 🔍
-   - Escaneia o código do projeto
-   - Detecta padrões, frameworks, configurações
-   - Identifica informações que podem ser inferidas
+1. **Automatic Analysis** 🔍
+   - Scans project code
+   - Detects patterns, frameworks, configurations
+   - Identifies information that can be inferred
 
-2. **Perguntas Abertas** 💬
-   - Faz perguntas específicas ao engenheiro
-   - Coleta informações que não podem ser detectadas automaticamente
-   - Perguntas contextualizadas baseadas na análise
+2. **Open-Ended Questions** 💬
+   - Asks specific questions to the engineer
+   - Collects information that cannot be automatically detected
+   - Contextualized questions based on analysis
 
-3. **Geração da Seção** 📝
-   - Combina análise automática + respostas
-   - Gera documentação markdown estruturada
-   - Formatação consistente e clara
+3. **Section Generation** 📝
+   - Combines automatic analysis + answers
+   - Generates structured markdown documentation
+   - Consistent and clear formatting
 
-4. **Salvamento Modular** 💾
-   - Salva em arquivo específico em `.claude/swe-substrate/`
-   - Ex: `/swe-substrate-languages` → `languages.md`
-   - Documentação organizada e escalável
+4. **Modular Storage** 💾
+   - Saves to specific file in `.claude/swe-substrate/`
+   - E.g.: `/swe-substrate-languages` → `languages.md`
+   - Organized and scalable documentation
 
-## ✨ Características
+## ✨ Features
 
-- **Modular**: Execute apenas os agentes relevantes para seu projeto
-- **Documentação Modularizada**: Arquivos separados em `.claude/swe-substrate/`
-- **Inteligente**: Combina análise automática com perguntas contextuais
-- **Conversacional**: Perguntas abertas que maximizam informações coletadas
-- **Escalável**: Documentação que cresce sem limites
-- **Flexível**: Não obriga uso de todos os agentes
-- **Distribuível**: Copie para qualquer projeto e use imediatamente
+- **Modular**: Run only the relevant agents for your project
+- **Modularized Documentation**: Separate files in `.claude/swe-substrate/`
+- **Intelligent**: Combines automatic analysis with contextual questions
+- **Conversational**: Open-ended questions that maximize collected information
+- **Scalable**: Documentation that grows without limits
+- **Flexible**: Doesn't force use of all agents
+- **Distributable**: Copy to any project and use immediately
 
-## 📦 Distribuição
+## 📦 Distribution
 
-Para usar em seus projetos:
+To use in your projects:
 
-1. Copie a pasta `.claude/` para o repositório do seu projeto
-2. Commit e compartilhe com o time
-3. Cada membro pode executar os agentes conforme necessidade
+1. Copy the `.claude/` folder to your project repository
+2. Commit and share with the team
+3. Each member can run the agents as needed
 
-## 🎓 Para Times de Engenharia
+## 🎓 For Engineering Teams
 
-Este sistema foi projetado para ser distribuído entre times de engenharia, permitindo que cada time:
+This system was designed to be distributed among engineering teams, allowing each team to:
 
-- Gere CLAUDE.md consistente e de alta qualidade
-- Documente práticas e convenções específicas do projeto
-- Melhore a performance do Claude Code nos seus projetos
-- Onboarde novos membros com documentação clara
+- Generate consistent, high-quality CLAUDE.md
+- Document project-specific practices and conventions
+- Improve Claude Code performance on their projects
+- Onboard new members with clear documentation
 
-## 🤝 Contribuindo
+## 🌍 Bilingual Support
 
-Para adicionar novos agentes ou melhorar os existentes:
+This project fully supports English and Portuguese:
+- 🇺🇸 English (primary)
+- 🇧🇷 Português (secondary)
 
-1. Crie um novo arquivo em `.claude/commands/swe-substrate-{nome}.md`
-2. Siga a estrutura dos agentes existentes
-3. Inclua: análise automática, perguntas abertas, geração de seção
-4. Atualize o orquestrador em `/swe-substrate-init`
+**Landing Page**: Bilingual with language switcher
+**Documentation**: Available in both languages
+**Agents**: Currently in Portuguese (English versions coming soon)
 
-## 📝 Licença
+## 🤝 Contributing
 
-Este projeto pode ser usado livremente em qualquer organização ou projeto de software.
+To add new agents or improve existing ones:
+
+1. Create a new file in `.claude/commands/swe-substrate-{name}.md`
+2. Follow the structure of existing agents
+3. Include: automatic analysis, open-ended questions, section generation
+4. Update the orchestrator in `/swe-substrate-init`
+
+## 📝 License
+
+Free to use for any organization or software project.
+
+## 🔗 Links
+
+- **Website**: https://zarathon.github.io/swe-substrate-agents/
+- **GitHub**: https://github.com/zarathon/swe-substrate-agents
+- **Releases**: https://github.com/zarathon/swe-substrate-agents/releases
+- **Issues**: https://github.com/zarathon/swe-substrate-agents/issues
+
+---
+
+**Built with Claude Code** 🤖
+
+⭐ Star on GitHub if this project was helpful to you!

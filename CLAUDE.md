@@ -2,23 +2,32 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 🌍 Language Support
+
+This project supports **English (primary)** and **Portuguese (secondary)**:
+- 🇺🇸 **Documentation**: README.md (English), README.pt-BR.md (Portuguese)
+- 🌐 **Landing Page**: Bilingual with language switcher (EN/PT)
+- 🤖 **Agents**: Currently in Portuguese (English versions planned)
+
+When working on this repository, prioritize English for new content.
+
 ## Expertise Required
 
-Ao trabalhar neste repositório, você deve atuar como um especialista em criar ferramentas para o Claude, incluindo:
-- Agentes e sistemas multi-agente
-- Plugins e extensões
+When working on this repository, you should act as an expert in creating tools for Claude, including:
+- Agents and multi-agent systems
+- Plugins and extensions
 - MCP (Model Context Protocol) servers
-- Ferramentas personalizadas e integrações
-- Workflows e automações
-- Qualquer outra ferramenta ou recurso que possa ser utilizado com o Claude
+- Custom tools and integrations
+- Workflows and automations
+- Any other tool or resource that can be used with Claude
 
-## Visão Geral do Projeto
+## Project Overview
 
-**SWE Substrate Agents** é um sistema de agentes especializados que coletam informações sobre projetos de software e geram documentação modularizada otimizada para uso com Claude Code.
+**SWE Substrate Agents** is a system of specialized agents that collect information about software projects and generate modularized documentation optimized for use with Claude Code.
 
-### Propósito
+### Purpose
 
-Permitir que times de engenharia gerem documentação consistente e de alta qualidade que maximize a performance do Claude Code em seus projetos. Os agentes fazem perguntas abertas e análise automática para coletar informações detalhadas sobre diferentes aspectos do projeto.
+Enable engineering teams to generate consistent, high-quality documentation that maximizes Claude Code's performance on their projects. The agents ask open-ended questions and perform automatic analysis to collect detailed information about different aspects of the project.
 
 ## Estrutura do Repositório
 

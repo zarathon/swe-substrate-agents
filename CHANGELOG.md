@@ -1,8 +1,55 @@
 # Changelog
 
-Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
+All notable changes to this project will be documented in this file.
 
-O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+## [Beta v0.2] - 2025-10-30
+
+### 🌍 Bilingual Support
+
+Major release adding full bilingual support to the project.
+
+#### Added
+- 🇺🇸 English as primary language throughout the project
+- 🇧🇷 Portuguese as secondary language
+- Bilingual landing page with language switcher (EN/PT)
+- `README.md` in English (new primary documentation)
+- `README.pt-BR.md` in Portuguese (moved from README.md)
+- Language preference persistence via localStorage
+- Comprehensive i18n translation dictionary (100+ strings)
+- Language switcher button in landing page header
+
+#### Changed
+- **Landing page**: Now loads in English by default
+- **Documentation structure**: English-first approach
+- **CLAUDE.md**: Updated with bilingual guidelines
+- **README**: Split into English (primary) and Portuguese (secondary)
+
+#### Technical
+- i18n system with translation keys
+- Automatic language detection
+- Smooth language switching without page reload
+- Language preference saved in browser
+
+#### Documentation
+- English documentation is now primary
+- Portuguese documentation fully maintained
+- Both languages have 100% feature parity
+- Bilingual support noted in all docs
+
+### 📈 International Reach
+- Expanded potential audience to 1.5+ billion users
+- Support for English-speaking markets (US, UK, Canada, Australia, India)
+- Support for Portuguese-speaking markets (Brazil, Portugal)
+
+### 🔄 No Breaking Changes
+- Fully backward compatible with v0.1
+- All agents remain the same
+- Same modular structure
+- Same installation process
+
+---
 
 ## [Beta v0.1] - 2025-10-29
 

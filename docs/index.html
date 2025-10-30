@@ -70,6 +70,12 @@
             color: var(--green);
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -85,6 +91,23 @@
 
         .nav-links a:hover {
             color: var(--blue);
+        }
+
+        .lang-switcher {
+            background: var(--bg-light);
+            border: 1px solid var(--bg-lighter);
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            color: var(--yellow);
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .lang-switcher:hover {
+            background: var(--bg-lighter);
+            border-color: var(--yellow);
         }
 
         /* Hero Section */
@@ -599,138 +622,143 @@
     <header>
         <nav>
             <div class="logo">🧬 SWE Substrate Agents</div>
-            <ul class="nav-links">
-                <li><a href="#context">Contexto</a></li>
-                <li><a href="#substrate">Substrato</a></li>
-                <li><a href="#agents">Agentes</a></li>
-                <li><a href="#start">Começar</a></li>
-                <li><a href="https://github.com/zarathon/swe-substrate-agents">GitHub →</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#context" data-i18n="nav-context">Contexto</a></li>
+                    <li><a href="#substrate" data-i18n="nav-substrate">Substrato</a></li>
+                    <li><a href="#agents" data-i18n="nav-agents">Agentes</a></li>
+                    <li><a href="#start" data-i18n="nav-start">Começar</a></li>
+                    <li><a href="https://github.com/zarathon/swe-substrate-agents">GitHub →</a></li>
+                </ul>
+                <button class="lang-switcher" onclick="toggleLanguage()">
+                    <span id="lang-btn">🇧🇷 PT</span>
+                </button>
+            </div>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-badge">🎯 Beta v0.1 • Estruture o Substrato de Engenharia</div>
+        <div class="hero-badge" data-i18n="hero-badge">🎯 Beta v0.1 • Estruture o Substrato de Engenharia</div>
         <h1>SWE Substrate Agents</h1>
-        <p class="tagline">Contexto Estruturado é Tudo</p>
-        <p class="subtitle">
+        <p class="tagline" data-i18n="hero-tagline">Contexto Estruturado é Tudo</p>
+        <p class="subtitle" data-i18n="hero-subtitle">
             Claude Code só é poderoso quando entende <strong>profundamente</strong> o seu projeto.
             11 agentes especializados capturam o <strong>substrato de engenharia de software</strong>
             em documentação modular otimizada.
         </p>
         <div class="cta-buttons">
-            <a href="https://github.com/zarathon/swe-substrate-agents" class="btn btn-primary">Ver no GitHub</a>
-            <a href="#start" class="btn btn-secondary">Começar Agora</a>
+            <a href="https://github.com/zarathon/swe-substrate-agents" class="btn btn-primary" data-i18n="cta-github">Ver no GitHub</a>
+            <a href="#start" class="btn btn-secondary" data-i18n="cta-start">Começar Agora</a>
         </div>
     </section>
 
     <div class="container">
         <section id="context">
-            <h2>⚠️ O <span class="highlight">Grande Problema</span> do Claude Code</h2>
-            <p class="section-subtitle">
+            <h2 data-i18n="problem-title">⚠️ O <span class="highlight">Grande Problema</span> do Claude Code</h2>
+            <p class="section-subtitle" data-i18n="problem-subtitle">
                 Claude Code é uma ferramenta incrível, mas tem uma dependência crítica: <strong>CONTEXTO</strong>
             </p>
 
             <div class="context-problem">
-                <h3>🚨 Sem Contexto Estruturado, Claude Code Falha</h3>
-                <p>
+                <h3 data-i18n="problem-heading">🚨 Sem Contexto Estruturado, Claude Code Falha</h3>
+                <p data-i18n="problem-p1">
                     Você já percebeu que às vezes o Claude Code gera código que não segue os padrões do seu projeto?
                     Ou sugere arquiteturas completamente diferentes do que você usa?
                 </p>
-                <p>
+                <p data-i18n="problem-p2">
                     <strong>Não é falha do Claude.</strong> É falta de contexto estruturado sobre o substrato de engenharia do seu projeto.
                 </p>
-                <div class="emphasis">
+                <div class="emphasis" data-i18n="problem-emphasis">
                     💡 Claude Code precisa entender as camadas fundamentais (substrato) da engenharia do seu software
                 </div>
             </div>
 
             <div class="comparison">
                 <div class="comparison-card bad-context">
-                    <h3>❌ Sem Contexto Estruturado</h3>
+                    <h3 data-i18n="bad-title">❌ Sem Contexto Estruturado</h3>
                     <ul>
-                        <li>Claude gera código genérico que não compila</li>
-                        <li>Sugere bibliotecas que você não usa</li>
-                        <li>Ignora convenções do time</li>
-                        <li>Cria testes que não rodam</li>
-                        <li>Propõe arquiteturas incompatíveis</li>
-                        <li>Desperdiça tempo com refatorações</li>
+                        <li data-i18n="bad-1">Claude gera código genérico que não compila</li>
+                        <li data-i18n="bad-2">Sugere bibliotecas que você não usa</li>
+                        <li data-i18n="bad-3">Ignora convenções do time</li>
+                        <li data-i18n="bad-4">Cria testes que não rodam</li>
+                        <li data-i18n="bad-5">Propõe arquiteturas incompatíveis</li>
+                        <li data-i18n="bad-6">Desperdiça tempo com refatorações</li>
                     </ul>
                 </div>
                 <div class="comparison-card good-context">
-                    <h3>✅ Com Substrato Estruturado</h3>
+                    <h3 data-i18n="good-title">✅ Com Substrato Estruturado</h3>
                     <ul>
-                        <li>Claude gera código idiomático que funciona</li>
-                        <li>Usa as bibliotecas corretas do projeto</li>
-                        <li>Segue todas as convenções estabelecidas</li>
-                        <li>Cria testes que rodam imediatamente</li>
-                        <li>Propõe soluções alinhadas com a arquitetura</li>
-                        <li>Economiza horas de desenvolvimento</li>
+                        <li data-i18n="good-1">Claude gera código idiomático que funciona</li>
+                        <li data-i18n="good-2">Usa as bibliotecas corretas do projeto</li>
+                        <li data-i18n="good-3">Segue todas as convenções estabelecidas</li>
+                        <li data-i18n="good-4">Cria testes que rodam imediatamente</li>
+                        <li data-i18n="good-5">Propõe soluções alinhadas com a arquitetura</li>
+                        <li data-i18n="good-6">Economiza horas de desenvolvimento</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="substrate">
-            <h2>🧬 O Que é <span class="highlight">Substrato</span> de Engenharia?</h2>
-            <p class="section-subtitle">
+            <h2 data-i18n="substrate-title">🧬 O Que é <span class="highlight">Substrato</span> de Engenharia?</h2>
+            <p class="section-subtitle" data-i18n="substrate-subtitle">
                 São as <strong>camadas fundamentais</strong> que definem como seu software é construído, testado,
                 implantado e mantido. É o DNA do seu projeto.
             </p>
 
             <div class="substrate-grid">
                 <div class="substrate-card">
-                    <h3>🏗️ Arquitetura & Design</h3>
-                    <p>Como seu sistema é estruturado? REST ou GraphQL? Microserviços ou monolito? Que padrões você segue?</p>
+                    <h3 data-i18n="sub1-title">🏗️ Arquitetura & Design</h3>
+                    <p data-i18n="sub1-desc">Como seu sistema é estruturado? REST ou GraphQL? Microserviços ou monolito? Que padrões você segue?</p>
                     <ul>
-                        <li>Patterns de arquitetura</li>
-                        <li>Estilos de API</li>
-                        <li>Estrutura de diretórios</li>
+                        <li data-i18n="sub1-1">Patterns de arquitetura</li>
+                        <li data-i18n="sub1-2">Estilos de API</li>
+                        <li data-i18n="sub1-3">Estrutura de diretórios</li>
                     </ul>
                 </div>
                 <div class="substrate-card">
-                    <h3>🔧 Ferramental & Config</h3>
-                    <p>Como você configura o ambiente? Docker? Kubernetes? Que variáveis de ambiente são críticas?</p>
+                    <h3 data-i18n="sub2-title">🔧 Ferramental & Config</h3>
+                    <p data-i18n="sub2-desc">Como você configura o ambiente? Docker? Kubernetes? Que variáveis de ambiente são críticas?</p>
                     <ul>
-                        <li>Containerização</li>
-                        <li>IaC (Infrastructure as Code)</li>
-                        <li>Scripts de setup</li>
+                        <li data-i18n="sub2-1">Containerização</li>
+                        <li data-i18n="sub2-2">IaC (Infrastructure as Code)</li>
+                        <li data-i18n="sub2-3">Scripts de setup</li>
                     </ul>
                 </div>
                 <div class="substrate-card">
-                    <h3>📝 Convenções de Código</h3>
-                    <p>Como você escreve código? Que idiomática segue? Como gerencia concorrência e memória?</p>
+                    <h3 data-i18n="sub3-title">📝 Convenções de Código</h3>
+                    <p data-i18n="sub3-desc">Como você escreve código? Que idiomática segue? Como gerencia concorrência e memória?</p>
                     <ul>
-                        <li>Style guides</li>
-                        <li>Padrões de naming</li>
-                        <li>Error handling</li>
+                        <li data-i18n="sub3-1">Style guides</li>
+                        <li data-i18n="sub3-2">Padrões de naming</li>
+                        <li data-i18n="sub3-3">Error handling</li>
                     </ul>
                 </div>
                 <div class="substrate-card">
-                    <h3>✅ Estratégia de Testes</h3>
-                    <p>Como você testa? Que frameworks usa? Qual coverage esperado? Como rodam os testes?</p>
+                    <h3 data-i18n="sub4-title">✅ Estratégia de Testes</h3>
+                    <p data-i18n="sub4-desc">Como você testa? Que frameworks usa? Qual coverage esperado? Como rodam os testes?</p>
                     <ul>
-                        <li>Unitários, Integração, E2E</li>
-                        <li>Mocks e fixtures</li>
-                        <li>CI/CD pipelines</li>
+                        <li data-i18n="sub4-1">Unitários, Integração, E2E</li>
+                        <li data-i18n="sub4-2">Mocks e fixtures</li>
+                        <li data-i18n="sub4-3">CI/CD pipelines</li>
                     </ul>
                 </div>
                 <div class="substrate-card">
-                    <h3>💾 Dados & Persistência</h3>
-                    <p>Como você persiste dados? PostgreSQL? MongoDB? Como faz migrations? Cache strategies?</p>
+                    <h3 data-i18n="sub5-title">💾 Dados & Persistência</h3>
+                    <p data-i18n="sub5-desc">Como você persiste dados? PostgreSQL? MongoDB? Como faz migrations? Cache strategies?</p>
                     <ul>
-                        <li>Databases e schemas</li>
-                        <li>ORMs e query builders</li>
-                        <li>Caching layers</li>
+                        <li data-i18n="sub5-1">Databases e schemas</li>
+                        <li data-i18n="sub5-2">ORMs e query builders</li>
+                        <li data-i18n="sub5-3">Caching layers</li>
                     </ul>
                 </div>
                 <div class="substrate-card">
-                    <h3>🔐 Segurança</h3>
-                    <p>Como você autentica? JWT? OAuth? Como gerencia secrets? Certificados SSL?</p>
+                    <h3 data-i18n="sub6-title">🔐 Segurança</h3>
+                    <p data-i18n="sub6-desc">Como você autentica? JWT? OAuth? Como gerencia secrets? Certificados SSL?</p>
                     <ul>
-                        <li>Auth strategies</li>
-                        <li>Secrets management</li>
-                        <li>Security practices</li>
+                        <li data-i18n="sub6-1">Auth strategies</li>
+                        <li data-i18n="sub6-2">Secrets management</li>
+                        <li data-i18n="sub6-3">Security practices</li>
                     </ul>
                 </div>
             </div>
@@ -738,16 +766,16 @@
 
         <section>
             <div class="solution-box">
-                <h3>💡 A Solução: Capturar o Substrato Sistematicamente</h3>
-                <p>
+                <h3 data-i18n="solution-title">💡 A Solução: Capturar o Substrato Sistematicamente</h3>
+                <p data-i18n="solution-p1">
                     Em vez de tentar explicar tudo manualmente para o Claude Code toda vez,
                     <strong>estruture o substrato de engenharia uma única vez</strong> usando agentes especializados.
                 </p>
-                <p>
+                <p data-i18n="solution-p2">
                     Cada agente faz <strong>perguntas abertas inteligentes</strong> e <strong>análise automática</strong>
                     para capturar um aspecto específico do substrato, gerando documentação modular otimizada.
                 </p>
-                <p class="highlight-text">
+                <p class="highlight-text" data-i18n="solution-result">
                     Resultado: Claude Code trabalha como um membro sênior do seu time que conhece TUDO sobre o projeto
                 </p>
             </div>
@@ -756,82 +784,82 @@
         <section class="stats">
             <div class="stat">
                 <div class="stat-number">11</div>
-                <div class="stat-label">Agentes Especializados</div>
+                <div class="stat-label" data-i18n="stat1">Agentes Especializados</div>
             </div>
             <div class="stat">
                 <div class="stat-number">4</div>
-                <div class="stat-label">Fases de Captura</div>
+                <div class="stat-label" data-i18n="stat2">Fases de Captura</div>
             </div>
             <div class="stat">
                 <div class="stat-number">100%</div>
-                <div class="stat-label">Modular</div>
+                <div class="stat-label" data-i18n="stat3">Modular</div>
             </div>
             <div class="stat">
                 <div class="stat-number">10x</div>
-                <div class="stat-label">Mais Contexto</div>
+                <div class="stat-label" data-i18n="stat4">Mais Contexto</div>
             </div>
         </section>
 
         <section id="agents">
-            <h2>🤖 11 Agentes que <span class="highlight">Capturam</span> o Substrato</h2>
-            <p class="section-subtitle">
+            <h2 data-i18n="agents-title">🤖 11 Agentes que <span class="highlight">Capturam</span> o Substrato</h2>
+            <p class="section-subtitle" data-i18n="agents-subtitle">
                 Cada agente é especializado em uma dimensão do substrato de engenharia de software
             </p>
 
             <div class="agents-grid">
                 <div class="agent-card">
-                    <h4>🎯 Contexto do Projeto</h4>
-                    <p>Visão de negócio, domínio, métricas, stakeholders, objetivos</p>
+                    <h4 data-i18n="agent1-title">🎯 Contexto do Projeto</h4>
+                    <p data-i18n="agent1-desc">Visão de negócio, domínio, métricas, stakeholders, objetivos</p>
                     <code>/swe-substrate-project-context</code>
                 </div>
                 <div class="agent-card">
-                    <h4>🔧 Ferramental & Configuração</h4>
-                    <p>Docker, IaC, env vars, scripts de setup, toolchain</p>
+                    <h4 data-i18n="agent2-title">🔧 Ferramental & Configuração</h4>
+                    <p data-i18n="agent2-desc">Docker, IaC, env vars, scripts de setup, toolchain</p>
                     <code>/swe-substrate-tooling-config</code>
                 </div>
                 <div class="agent-card">
-                    <h4>📝 Linguagens & Idiomática</h4>
-                    <p>Convenções de código, concorrência, memória, guidelines</p>
+                    <h4 data-i18n="agent3-title">📝 Linguagens & Idiomática</h4>
+                    <p data-i18n="agent3-desc">Convenções de código, concorrência, memória, guidelines</p>
                     <code>/swe-substrate-languages</code>
                 </div>
                 <div class="agent-card">
-                    <h4>🌐 Design de API</h4>
-                    <p>REST, GraphQL, gRPC, versionamento, contratos, endpoints</p>
+                    <h4 data-i18n="agent4-title">🌐 Design de API</h4>
+                    <p data-i18n="agent4-desc">REST, GraphQL, gRPC, versionamento, contratos, endpoints</p>
                     <code>/swe-substrate-api-design</code>
                 </div>
                 <div class="agent-card">
-                    <h4>✅ Estratégia de Testes</h4>
-                    <p>Unitários, integração, E2E, coverage, mocks, fixtures</p>
+                    <h4 data-i18n="agent5-title">✅ Estratégia de Testes</h4>
+                    <p data-i18n="agent5-desc">Unitários, integração, E2E, coverage, mocks, fixtures</p>
                     <code>/swe-substrate-testing-strategy</code>
                 </div>
                 <div class="agent-card">
-                    <h4>🤖 Agentes & Background Jobs</h4>
-                    <p>Daemons, workers, schedulers, LLM agents, queue systems</p>
+                    <h4 data-i18n="agent6-title">🤖 Agentes & Background Jobs</h4>
+                    <p data-i18n="agent6-desc">Daemons, workers, schedulers, LLM agents, queue systems</p>
                     <code>/swe-substrate-agents</code>
                 </div>
                 <div class="agent-card">
-                    <h4>📦 Gerenciamento de Pacotes</h4>
-                    <p>npm, pip, cargo, dependências, versionamento, lockfiles</p>
+                    <h4 data-i18n="agent7-title">📦 Gerenciamento de Pacotes</h4>
+                    <p data-i18n="agent7-desc">npm, pip, cargo, dependências, versionamento, lockfiles</p>
                     <code>/swe-substrate-package-mgmt</code>
                 </div>
                 <div class="agent-card">
-                    <h4>📊 Observabilidade</h4>
-                    <p>Logs, métricas, traces, monitoring, alertas, dashboards</p>
+                    <h4 data-i18n="agent8-title">📊 Observabilidade</h4>
+                    <p data-i18n="agent8-desc">Logs, métricas, traces, monitoring, alertas, dashboards</p>
                     <code>/swe-substrate-observability</code>
                 </div>
                 <div class="agent-card">
-                    <h4>💾 Dados & Persistência</h4>
-                    <p>Databases, schemas, migrations, cache, storage, backups</p>
+                    <h4 data-i18n="agent9-title">💾 Dados & Persistência</h4>
+                    <p data-i18n="agent9-desc">Databases, schemas, migrations, cache, storage, backups</p>
                     <code>/swe-substrate-data</code>
                 </div>
                 <div class="agent-card">
-                    <h4>🔐 Segurança</h4>
-                    <p>Autenticação, autorização, secrets, certificados, compliance</p>
+                    <h4 data-i18n="agent10-title">🔐 Segurança</h4>
+                    <p data-i18n="agent10-desc">Autenticação, autorização, secrets, certificados, compliance</p>
                     <code>/swe-substrate-security</code>
                 </div>
                 <div class="agent-card">
-                    <h4>📚 Documentação</h4>
-                    <p>Comentários, diagramas, ADRs, RFCs, knowledge base</p>
+                    <h4 data-i18n="agent11-title">📚 Documentação</h4>
+                    <p data-i18n="agent11-desc">Comentários, diagramas, ADRs, RFCs, knowledge base</p>
                     <code>/swe-substrate-documentation</code>
                 </div>
             </div>
@@ -839,12 +867,12 @@
 
         <section id="start">
             <div class="quick-start">
-                <h3>🚀 Como Estruturar seu Substrato (3 minutos)</h3>
+                <h3 data-i18n="start-title">🚀 Como Estruturar seu Substrato (3 minutos)</h3>
                 <div class="steps">
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <h4>Clone e copie para seu projeto</h4>
+                            <h4 data-i18n="step1-title">Clone e copie para seu projeto</h4>
                             <code>git clone https://github.com/zarathon/swe-substrate-agents.git
 cd swe-substrate-agents
 cp -r .claude /seu-projeto/</code>
@@ -853,27 +881,27 @@ cp -r .claude /seu-projeto/</code>
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h4>Execute o orquestrador no Claude Code</h4>
+                            <h4 data-i18n="step2-title">Execute o orquestrador no Claude Code</h4>
                             <code>/swe-substrate-init</code>
-                            <p>Ele lista todos os agentes disponíveis e explica o sistema</p>
+                            <p data-i18n="step2-desc">Ele lista todos os agentes disponíveis e explica o sistema</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h4>Execute os agentes relevantes</h4>
+                            <h4 data-i18n="step3-title">Execute os agentes relevantes</h4>
                             <code>/swe-substrate-languages
 /swe-substrate-testing-strategy
 /swe-substrate-data
 /swe-substrate-security</code>
-                            <p>Execute apenas os agentes relevantes para seu projeto. Cada um fará perguntas abertas.</p>
+                            <p data-i18n="step3-desc">Execute apenas os agentes relevantes para seu projeto. Cada um fará perguntas abertas.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
                         <div class="step-content">
-                            <h4>Responda as perguntas com contexto</h4>
-                            <p>Os agentes combinam análise automática do código com suas respostas para gerar documentação estruturada em <code>.claude/swe-substrate/</code></p>
+                            <h4 data-i18n="step4-title">Responda as perguntas com contexto</h4>
+                            <p data-i18n="step4-desc">Os agentes combinam análise automática do código com suas respostas para gerar documentação estruturada em <code>.claude/swe-substrate/</code></p>
                         </div>
                     </div>
                 </div>
@@ -881,30 +909,30 @@ cp -r .claude /seu-projeto/</code>
         </section>
 
         <section>
-            <h2>✨ Por Que Modularizar?</h2>
+            <h2 data-i18n="why-title">✨ Por Que Modularizar?</h2>
             <div class="substrate-grid">
                 <div class="substrate-card">
-                    <h3>📦 Escalabilidade</h3>
-                    <p>Documentação cresce sem limites. Cada módulo é independente e pode ser atualizado separadamente.</p>
+                    <h3 data-i18n="why1-title">📦 Escalabilidade</h3>
+                    <p data-i18n="why1-desc">Documentação cresce sem limites. Cada módulo é independente e pode ser atualizado separadamente.</p>
                 </div>
                 <div class="substrate-card">
-                    <h3>🔧 Manutenção</h3>
-                    <p>Fácil de navegar, atualizar e revisar. Sem arquivo CLAUDE.md monolítico gigante.</p>
+                    <h3 data-i18n="why2-title">🔧 Manutenção</h3>
+                    <p data-i18n="why2-desc">Fácil de navegar, atualizar e revisar. Sem arquivo CLAUDE.md monolítico gigante.</p>
                 </div>
                 <div class="substrate-card">
-                    <h3>🤝 Colaboração</h3>
-                    <p>Menos conflitos em PRs. Times podem trabalhar em módulos diferentes simultaneamente.</p>
+                    <h3 data-i18n="why3-title">🤝 Colaboração</h3>
+                    <p data-i18n="why3-desc">Menos conflitos em PRs. Times podem trabalhar em módulos diferentes simultaneamente.</p>
                 </div>
                 <div class="substrate-card">
-                    <h3>⚡ Performance</h3>
-                    <p>Claude Code carrega apenas o contexto relevante para cada tarefa, otimizando velocidade.</p>
+                    <h3 data-i18n="why4-title">⚡ Performance</h3>
+                    <p data-i18n="why4-desc">Claude Code carrega apenas o contexto relevante para cada tarefa, otimizando velocidade.</p>
                 </div>
             </div>
         </section>
     </div>
 
     <footer>
-        <p style="font-size: 1.2rem; color: var(--yellow); font-weight: 600; margin-bottom: 1rem;">
+        <p style="font-size: 1.2rem; color: var(--yellow); font-weight: 600; margin-bottom: 1rem;" data-i18n="footer-tagline">
             Estruture o substrato. Maximize o Claude Code.
         </p>
         <p>
@@ -912,12 +940,283 @@ cp -r .claude /seu-projeto/</code>
             <a href="https://github.com/zarathon/swe-substrate-agents/releases">Releases</a> •
             <a href="https://github.com/zarathon/swe-substrate-agents/issues">Issues</a>
         </p>
-        <p style="margin-top: 1.5rem; opacity: 0.6;">
+        <p style="margin-top: 1.5rem; opacity: 0.6;" data-i18n="footer-credits">
             Beta v0.1 • Desenvolvido com Claude Code 🤖
         </p>
-        <p style="opacity: 0.6;">
+        <p style="opacity: 0.6;" data-i18n="footer-license">
             Uso livre para qualquer organização ou projeto de software
         </p>
     </footer>
+
+    <script>
+        const translations = {
+            pt: {
+                'nav-context': 'Contexto',
+                'nav-substrate': 'Substrato',
+                'nav-agents': 'Agentes',
+                'nav-start': 'Começar',
+                'hero-badge': '🎯 Beta v0.1 • Estruture o Substrato de Engenharia',
+                'hero-tagline': 'Contexto Estruturado é Tudo',
+                'hero-subtitle': 'Claude Code só é poderoso quando entende <strong>profundamente</strong> o seu projeto. 11 agentes especializados capturam o <strong>substrato de engenharia de software</strong> em documentação modular otimizada.',
+                'cta-github': 'Ver no GitHub',
+                'cta-start': 'Começar Agora',
+                'problem-title': '⚠️ O <span class="highlight">Grande Problema</span> do Claude Code',
+                'problem-subtitle': 'Claude Code é uma ferramenta incrível, mas tem uma dependência crítica: <strong>CONTEXTO</strong>',
+                'problem-heading': '🚨 Sem Contexto Estruturado, Claude Code Falha',
+                'problem-p1': 'Você já percebeu que às vezes o Claude Code gera código que não segue os padrões do seu projeto? Ou sugere arquiteturas completamente diferentes do que você usa?',
+                'problem-p2': '<strong>Não é falha do Claude.</strong> É falta de contexto estruturado sobre o substrato de engenharia do seu projeto.',
+                'problem-emphasis': '💡 Claude Code precisa entender as camadas fundamentais (substrato) da engenharia do seu software',
+                'bad-title': '❌ Sem Contexto Estruturado',
+                'bad-1': 'Claude gera código genérico que não compila',
+                'bad-2': 'Sugere bibliotecas que você não usa',
+                'bad-3': 'Ignora convenções do time',
+                'bad-4': 'Cria testes que não rodam',
+                'bad-5': 'Propõe arquiteturas incompatíveis',
+                'bad-6': 'Desperdiça tempo com refatorações',
+                'good-title': '✅ Com Substrato Estruturado',
+                'good-1': 'Claude gera código idiomático que funciona',
+                'good-2': 'Usa as bibliotecas corretas do projeto',
+                'good-3': 'Segue todas as convenções estabelecidas',
+                'good-4': 'Cria testes que rodam imediatamente',
+                'good-5': 'Propõe soluções alinhadas com a arquitetura',
+                'good-6': 'Economiza horas de desenvolvimento',
+                'substrate-title': '🧬 O Que é <span class="highlight">Substrato</span> de Engenharia?',
+                'substrate-subtitle': 'São as <strong>camadas fundamentais</strong> que definem como seu software é construído, testado, implantado e mantido. É o DNA do seu projeto.',
+                'sub1-title': '🏗️ Arquitetura & Design',
+                'sub1-desc': 'Como seu sistema é estruturado? REST ou GraphQL? Microserviços ou monolito? Que padrões você segue?',
+                'sub1-1': 'Patterns de arquitetura',
+                'sub1-2': 'Estilos de API',
+                'sub1-3': 'Estrutura de diretórios',
+                'sub2-title': '🔧 Ferramental & Config',
+                'sub2-desc': 'Como você configura o ambiente? Docker? Kubernetes? Que variáveis de ambiente são críticas?',
+                'sub2-1': 'Containerização',
+                'sub2-2': 'IaC (Infrastructure as Code)',
+                'sub2-3': 'Scripts de setup',
+                'sub3-title': '📝 Convenções de Código',
+                'sub3-desc': 'Como você escreve código? Que idiomática segue? Como gerencia concorrência e memória?',
+                'sub3-1': 'Style guides',
+                'sub3-2': 'Padrões de naming',
+                'sub3-3': 'Error handling',
+                'sub4-title': '✅ Estratégia de Testes',
+                'sub4-desc': 'Como você testa? Que frameworks usa? Qual coverage esperado? Como rodam os testes?',
+                'sub4-1': 'Unitários, Integração, E2E',
+                'sub4-2': 'Mocks e fixtures',
+                'sub4-3': 'CI/CD pipelines',
+                'sub5-title': '💾 Dados & Persistência',
+                'sub5-desc': 'Como você persiste dados? PostgreSQL? MongoDB? Como faz migrations? Cache strategies?',
+                'sub5-1': 'Databases e schemas',
+                'sub5-2': 'ORMs e query builders',
+                'sub5-3': 'Caching layers',
+                'sub6-title': '🔐 Segurança',
+                'sub6-desc': 'Como você autentica? JWT? OAuth? Como gerencia secrets? Certificados SSL?',
+                'sub6-1': 'Auth strategies',
+                'sub6-2': 'Secrets management',
+                'sub6-3': 'Security practices',
+                'solution-title': '💡 A Solução: Capturar o Substrato Sistematicamente',
+                'solution-p1': 'Em vez de tentar explicar tudo manualmente para o Claude Code toda vez, <strong>estruture o substrato de engenharia uma única vez</strong> usando agentes especializados.',
+                'solution-p2': 'Cada agente faz <strong>perguntas abertas inteligentes</strong> e <strong>análise automática</strong> para capturar um aspecto específico do substrato, gerando documentação modular otimizada.',
+                'solution-result': 'Resultado: Claude Code trabalha como um membro sênior do seu time que conhece TUDO sobre o projeto',
+                'stat1': 'Agentes Especializados',
+                'stat2': 'Fases de Captura',
+                'stat3': 'Modular',
+                'stat4': 'Mais Contexto',
+                'agents-title': '🤖 11 Agentes que <span class="highlight">Capturam</span> o Substrato',
+                'agents-subtitle': 'Cada agente é especializado em uma dimensão do substrato de engenharia de software',
+                'agent1-title': '🎯 Contexto do Projeto',
+                'agent1-desc': 'Visão de negócio, domínio, métricas, stakeholders, objetivos',
+                'agent2-title': '🔧 Ferramental & Configuração',
+                'agent2-desc': 'Docker, IaC, env vars, scripts de setup, toolchain',
+                'agent3-title': '📝 Linguagens & Idiomática',
+                'agent3-desc': 'Convenções de código, concorrência, memória, guidelines',
+                'agent4-title': '🌐 Design de API',
+                'agent4-desc': 'REST, GraphQL, gRPC, versionamento, contratos, endpoints',
+                'agent5-title': '✅ Estratégia de Testes',
+                'agent5-desc': 'Unitários, integração, E2E, coverage, mocks, fixtures',
+                'agent6-title': '🤖 Agentes & Background Jobs',
+                'agent6-desc': 'Daemons, workers, schedulers, LLM agents, queue systems',
+                'agent7-title': '📦 Gerenciamento de Pacotes',
+                'agent7-desc': 'npm, pip, cargo, dependências, versionamento, lockfiles',
+                'agent8-title': '📊 Observabilidade',
+                'agent8-desc': 'Logs, métricas, traces, monitoring, alertas, dashboards',
+                'agent9-title': '💾 Dados & Persistência',
+                'agent9-desc': 'Databases, schemas, migrations, cache, storage, backups',
+                'agent10-title': '🔐 Segurança',
+                'agent10-desc': 'Autenticação, autorização, secrets, certificados, compliance',
+                'agent11-title': '📚 Documentação',
+                'agent11-desc': 'Comentários, diagramas, ADRs, RFCs, knowledge base',
+                'start-title': '🚀 Como Estruturar seu Substrato (3 minutos)',
+                'step1-title': 'Clone e copie para seu projeto',
+                'step2-title': 'Execute o orquestrador no Claude Code',
+                'step2-desc': 'Ele lista todos os agentes disponíveis e explica o sistema',
+                'step3-title': 'Execute os agentes relevantes',
+                'step3-desc': 'Execute apenas os agentes relevantes para seu projeto. Cada um fará perguntas abertas.',
+                'step4-title': 'Responda as perguntas com contexto',
+                'step4-desc': 'Os agentes combinam análise automática do código com suas respostas para gerar documentação estruturada em <code>.claude/swe-substrate/</code>',
+                'why-title': '✨ Por Que Modularizar?',
+                'why1-title': '📦 Escalabilidade',
+                'why1-desc': 'Documentação cresce sem limites. Cada módulo é independente e pode ser atualizado separadamente.',
+                'why2-title': '🔧 Manutenção',
+                'why2-desc': 'Fácil de navegar, atualizar e revisar. Sem arquivo CLAUDE.md monolítico gigante.',
+                'why3-title': '🤝 Colaboração',
+                'why3-desc': 'Menos conflitos em PRs. Times podem trabalhar em módulos diferentes simultaneamente.',
+                'why4-title': '⚡ Performance',
+                'why4-desc': 'Claude Code carrega apenas o contexto relevante para cada tarefa, otimizando velocidade.',
+                'footer-tagline': 'Estruture o substrato. Maximize o Claude Code.',
+                'footer-credits': 'Beta v0.1 • Desenvolvido com Claude Code 🤖',
+                'footer-license': 'Uso livre para qualquer organização ou projeto de software'
+            },
+            en: {
+                'nav-context': 'Context',
+                'nav-substrate': 'Substrate',
+                'nav-agents': 'Agents',
+                'nav-start': 'Get Started',
+                'hero-badge': '🎯 Beta v0.1 • Structure Your Engineering Substrate',
+                'hero-tagline': 'Structured Context is Everything',
+                'hero-subtitle': 'Claude Code is only powerful when it <strong>deeply</strong> understands your project. 11 specialized agents capture the <strong>software engineering substrate</strong> in optimized modular documentation.',
+                'cta-github': 'View on GitHub',
+                'cta-start': 'Get Started',
+                'problem-title': '⚠️ The <span class="highlight">Big Problem</span> with Claude Code',
+                'problem-subtitle': 'Claude Code is an amazing tool, but it has a critical dependency: <strong>CONTEXT</strong>',
+                'problem-heading': '🚨 Without Structured Context, Claude Code Fails',
+                'problem-p1': 'Have you noticed that sometimes Claude Code generates code that doesn\'t follow your project\'s patterns? Or suggests completely different architectures than what you use?',
+                'problem-p2': '<strong>It\'s not Claude\'s fault.</strong> It\'s lack of structured context about your project\'s engineering substrate.',
+                'problem-emphasis': '💡 Claude Code needs to understand the fundamental layers (substrate) of your software engineering',
+                'bad-title': '❌ Without Structured Context',
+                'bad-1': 'Claude generates generic code that doesn\'t compile',
+                'bad-2': 'Suggests libraries you don\'t use',
+                'bad-3': 'Ignores team conventions',
+                'bad-4': 'Creates tests that don\'t run',
+                'bad-5': 'Proposes incompatible architectures',
+                'bad-6': 'Wastes time with refactorings',
+                'good-title': '✅ With Structured Substrate',
+                'good-1': 'Claude generates idiomatic code that works',
+                'good-2': 'Uses the correct project libraries',
+                'good-3': 'Follows all established conventions',
+                'good-4': 'Creates tests that run immediately',
+                'good-5': 'Proposes solutions aligned with architecture',
+                'good-6': 'Saves hours of development time',
+                'substrate-title': '🧬 What is Engineering <span class="highlight">Substrate</span>?',
+                'substrate-subtitle': 'These are the <strong>fundamental layers</strong> that define how your software is built, tested, deployed, and maintained. It\'s your project\'s DNA.',
+                'sub1-title': '🏗️ Architecture & Design',
+                'sub1-desc': 'How is your system structured? REST or GraphQL? Microservices or monolith? What patterns do you follow?',
+                'sub1-1': 'Architecture patterns',
+                'sub1-2': 'API styles',
+                'sub1-3': 'Directory structure',
+                'sub2-title': '🔧 Tooling & Config',
+                'sub2-desc': 'How do you configure the environment? Docker? Kubernetes? Which environment variables are critical?',
+                'sub2-1': 'Containerization',
+                'sub2-2': 'IaC (Infrastructure as Code)',
+                'sub2-3': 'Setup scripts',
+                'sub3-title': '📝 Code Conventions',
+                'sub3-desc': 'How do you write code? What idioms do you follow? How do you manage concurrency and memory?',
+                'sub3-1': 'Style guides',
+                'sub3-2': 'Naming patterns',
+                'sub3-3': 'Error handling',
+                'sub4-title': '✅ Testing Strategy',
+                'sub4-desc': 'How do you test? Which frameworks do you use? What coverage is expected? How do tests run?',
+                'sub4-1': 'Unit, Integration, E2E',
+                'sub4-2': 'Mocks and fixtures',
+                'sub4-3': 'CI/CD pipelines',
+                'sub5-title': '💾 Data & Persistence',
+                'sub5-desc': 'How do you persist data? PostgreSQL? MongoDB? How do you do migrations? Cache strategies?',
+                'sub5-1': 'Databases and schemas',
+                'sub5-2': 'ORMs and query builders',
+                'sub5-3': 'Caching layers',
+                'sub6-title': '🔐 Security',
+                'sub6-desc': 'How do you authenticate? JWT? OAuth? How do you manage secrets? SSL certificates?',
+                'sub6-1': 'Auth strategies',
+                'sub6-2': 'Secrets management',
+                'sub6-3': 'Security practices',
+                'solution-title': '💡 The Solution: Capture the Substrate Systematically',
+                'solution-p1': 'Instead of trying to manually explain everything to Claude Code every time, <strong>structure the engineering substrate once</strong> using specialized agents.',
+                'solution-p2': 'Each agent asks <strong>intelligent open-ended questions</strong> and performs <strong>automatic analysis</strong> to capture a specific aspect of the substrate, generating optimized modular documentation.',
+                'solution-result': 'Result: Claude Code works like a senior team member who knows EVERYTHING about the project',
+                'stat1': 'Specialized Agents',
+                'stat2': 'Capture Phases',
+                'stat3': 'Modular',
+                'stat4': 'More Context',
+                'agents-title': '🤖 11 Agents that <span class="highlight">Capture</span> the Substrate',
+                'agents-subtitle': 'Each agent specializes in one dimension of the software engineering substrate',
+                'agent1-title': '🎯 Project Context',
+                'agent1-desc': 'Business vision, domain, metrics, stakeholders, objectives',
+                'agent2-title': '🔧 Tooling & Configuration',
+                'agent2-desc': 'Docker, IaC, env vars, setup scripts, toolchain',
+                'agent3-title': '📝 Languages & Idioms',
+                'agent3-desc': 'Code conventions, concurrency, memory, guidelines',
+                'agent4-title': '🌐 API Design',
+                'agent4-desc': 'REST, GraphQL, gRPC, versioning, contracts, endpoints',
+                'agent5-title': '✅ Testing Strategy',
+                'agent5-desc': 'Unit, integration, E2E, coverage, mocks, fixtures',
+                'agent6-title': '🤖 Agents & Background Jobs',
+                'agent6-desc': 'Daemons, workers, schedulers, LLM agents, queue systems',
+                'agent7-title': '📦 Package Management',
+                'agent7-desc': 'npm, pip, cargo, dependencies, versioning, lockfiles',
+                'agent8-title': '📊 Observability',
+                'agent8-desc': 'Logs, metrics, traces, monitoring, alerts, dashboards',
+                'agent9-title': '💾 Data & Persistence',
+                'agent9-desc': 'Databases, schemas, migrations, cache, storage, backups',
+                'agent10-title': '🔐 Security',
+                'agent10-desc': 'Authentication, authorization, secrets, certificates, compliance',
+                'agent11-title': '📚 Documentation',
+                'agent11-desc': 'Comments, diagrams, ADRs, RFCs, knowledge base',
+                'start-title': '🚀 How to Structure Your Substrate (3 minutes)',
+                'step1-title': 'Clone and copy to your project',
+                'step2-title': 'Run the orchestrator in Claude Code',
+                'step2-desc': 'It lists all available agents and explains the system',
+                'step3-title': 'Run the relevant agents',
+                'step3-desc': 'Run only the agents relevant to your project. Each will ask open-ended questions.',
+                'step4-title': 'Answer the questions with context',
+                'step4-desc': 'Agents combine automatic code analysis with your answers to generate structured documentation in <code>.claude/swe-substrate/</code>',
+                'why-title': '✨ Why Modularize?',
+                'why1-title': '📦 Scalability',
+                'why1-desc': 'Documentation grows without limits. Each module is independent and can be updated separately.',
+                'why2-title': '🔧 Maintenance',
+                'why2-desc': 'Easy to navigate, update, and review. No giant monolithic CLAUDE.md file.',
+                'why3-title': '🤝 Collaboration',
+                'why3-desc': 'Fewer PR conflicts. Teams can work on different modules simultaneously.',
+                'why4-title': '⚡ Performance',
+                'why4-desc': 'Claude Code loads only the relevant context for each task, optimizing speed.',
+                'footer-tagline': 'Structure the substrate. Maximize Claude Code.',
+                'footer-credits': 'Beta v0.1 • Built with Claude Code 🤖',
+                'footer-license': 'Free to use for any organization or software project'
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'pt' ? 'en' : 'pt';
+            updateContent();
+            updateLangButton();
+
+            // Save preference
+            localStorage.setItem('swe-substrate-lang', currentLang);
+        }
+
+        function updateContent() {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+        }
+
+        function updateLangButton() {
+            const btn = document.getElementById('lang-btn');
+            btn.textContent = currentLang === 'en' ? '🇧🇷 PT' : '🇺🇸 EN';
+        }
+
+        // Initialize language on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('swe-substrate-lang');
+            if (savedLang) {
+                currentLang = savedLang;
+                updateContent();
+                updateLangButton();
+            }
+        });
+    </script>
 </body>
 </html>
